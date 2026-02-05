@@ -25,8 +25,9 @@ function setLabTitle() {
 function setUniversityName() {
     const uniMain = document.querySelector('.uni-main');
     const uniSub = document.querySelector('.uni-sub');
-    if (uniMain) uniMain.textContent = siteData.universityShort;
-    if (uniSub) uniSub.textContent = siteData.universitySub;
+    // Show the lab name by the logo
+    if (uniMain) uniMain.textContent = siteData.labName;
+    if (uniSub) uniSub.textContent = '';
 }
 
 // Set footer text
@@ -55,9 +56,9 @@ function loadProfileCard() {
         <p class="department">${profileData.department}</p>
         <p class="university">${profileData.university}</p>
         <div class="profile-links">
-            <a href="${profileData.github}" class="profile-link" target="_blank">📍 ${profileData.location}</a>
-            <a href="${profileData.github}" class="profile-link" target="_blank">GitHub</a>
-            <a href="${profileData.googleScholar}" class="profile-link" target="_blank">Google Scholar</a>
+            <a href="${profileData.website}" class="profile-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="${profileData.github}" class="profile-link" target="_blank" rel="noopener">GitHub</a>
+            <a href="${profileData.googleScholar}" class="profile-link" target="_blank" rel="noopener">Google Scholar</a>
         </div>
     `;
 }
@@ -78,9 +79,17 @@ function loadNews() {
 
 // Load members
 function loadMembers() {
-    const postdocList = document.getElementById('postdocList');
-    const phdList = document.getElementById('phdList');
-
+    const mastersList = document.getElementById('mastersStudents');
+    const postdocList = document.getElementById('postdocs');
+    const phdList = document.getElementById('phdStudents');
+    if (mastersList) {
+        mastersList.innerHTML = membersData.mastersStudents.map(member => `
+            <div class="member-item">
+                <h4>${member.name}</h4>
+                <p>(${member.focus})</p>
+            </div>
+        `).join('');
+    }
     if (postdocList) {
         postdocList.innerHTML = membersData.postdocs.map(member => `
             <div class="member-item">

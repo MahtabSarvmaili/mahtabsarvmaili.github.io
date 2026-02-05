@@ -31,6 +31,39 @@ header {
     gap: 15px;
 }
 
+.site-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* Lab name shown next to the logo */
+.logo .university-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo .lab-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.logo .lab-acronym {
+    font-size: 12px;
+    color: #666;
+}
+
+/* LinkedIn link in header */
+.linkedin-link {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 600;
+    align-self: center;
+}
+
 .university-badge {
     width: 50px;
     height: 50px;
