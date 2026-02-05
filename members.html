@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members - Applied Machine Learning Research Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="university-badge">
+                    <div class="shield">ML</div>
+                </div>
+                <div class="university-name">
+                    <span class="uni-main">RESEARCH</span>
+                    <span class="uni-sub">UNIVERSITY</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <h1 class="lab-title"><a href="index.html">Applied Machine Learning Research Lab</a></h1>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="members.html" class="active">Members</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="teaching.html">Teaching</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="menu-toggle" onclick="toggleMenu()">☰</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="page-layout">
+            <aside class="sidebar">
+                <div class="profile-card" id="profileCard">
+                    <!-- Profile will be loaded from data.js -->
+                </div>
+            </aside>
+
+            <section class="content">
+                <h2>Members</h2>
+
+                <div class="members-section">
+                    <h3>Postdoc Researchers</h3>
+                    <div id="postdocList" class="member-list">
+                        <!-- Postdocs will be loaded from data.js -->
+                    </div>
+                </div>
+
+                <div class="members-section">
+                    <h3>PhD Students</h3>
+                    <div id="phdList" class="member-list">
+                        <!-- PhD students will be loaded from data.js -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Applied Machine Learning Research Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Load members page specific content
+        setPageTitle('Members');
+        loadProfileCard();
+        loadMembers();
+    </script>
+</body>
+</html>
