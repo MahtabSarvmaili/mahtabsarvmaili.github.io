@@ -202,6 +202,8 @@ main {
 }
 
 .highlight-box {
+    display: block;
+    text-decoration: none;
     background: linear-gradient(135deg, #f77f00 0%, #ff9500 100%);
     color: white;
     padding: 25px;
@@ -397,6 +399,28 @@ img.profile-image {
     background: #f9f9f9;
     border-radius: 8px;
     border-left: 4px solid #f77f00;
+}
+
+/* Remove underlines from highlight-box links and ensure block behavior */
+.highlight-box {
+    display: block;
+    text-decoration: none;
+}
+.highlight-box:link,
+.highlight-box:visited,
+.highlight-box:hover,
+.highlight-box:active {
+    text-decoration: none;
+}
+.highlight-box h3,
+.highlight-box p {
+    text-decoration: none;
+}
+
+/* Forcefully remove any link underlines inside highlight boxes */
+.highlight-box,
+.highlight-box * {
+    text-decoration: none !important;
 }
 
 .member-item h4 {
